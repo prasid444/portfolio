@@ -19,13 +19,13 @@ class MainMenu extends Component {
     toggleVisible=()=>{
         if(!this.state.isVisible){
             console.log("ADDING EVENT")
-            window.addEventListener('scroll', this.noScroll);
+            // window.addEventListener('scroll', this.noScroll);
             document.getElementById("main-contents").classList.add('make-blur');
 
         }else{
             console.log("REMOVING EVENT")
             document.getElementById("main-contents").classList.remove('make-blur');
-            window.removeEventListener('scroll', this.noScroll);
+            // window.removeEventListener('scroll', this.noScroll);
 
         }
         this.setState({

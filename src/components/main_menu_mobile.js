@@ -21,13 +21,13 @@ class MainMenuMobile extends Component {
     toggleVisible=()=>{
         if(!this.state.isVisible){
             console.log("ADDING EVENT")
-            window.addEventListener('scroll', this.noScroll);
+            // window.addEventListener('scroll', this.noScroll);
             document.getElementById("main-contents").classList.add('make-blur');
 
         }else{
             console.log("REMOVING EVENT")
             document.getElementById("main-contents").classList.remove('make-blur');
-            window.removeEventListener('scroll', this.noScroll);
+            // window.removeEventListener('scroll', this.noScroll);
 
         }
         this.setState({
@@ -57,7 +57,7 @@ class MainMenuMobile extends Component {
             }}>
                 <div style={{
                     zIndex:1001,
-                    position:'absolute',
+                    position:'fixed',
                     backgroundColor:isVisible?'#87CEFA':'transparent',
                     height:isVisible?300:40,
                     width:isVisible?this.innerwidth:this.innerwidth,
@@ -107,6 +107,8 @@ class MainMenuMobile extends Component {
                     zIndex:1001,
                     display:isVisible?'flex':'none',
                     flex:1,
+                    width:'100%',
+                    position:'fixed'
                     
                 }}>
                 <Row type='flex' justify='center' style={{
