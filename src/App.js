@@ -12,6 +12,9 @@ import Experience from './pages/experience';
 import Skills from './pages/skills';
 import ReactPageScroller from "react-page-scroller";
 import Scroller from './components/scroller';
+import MediaQuery from 'react-responsive';
+import MainMenuMobile from './components/main_menu_mobile';
+
 
 class App extends React.Component {
   constructor(props) {
@@ -29,12 +32,18 @@ class App extends React.Component {
   render(){
   return (
     <div style={{
-      // display:'flex',flexDirection:'row',width:'auto',
-      // height:'100vh',
-      // overflowY:'scroll',
-      // maxHeight:'100vh'
     }}>
-    <MainMenu/>
+      <MediaQuery minDeviceWidth={500}>
+  {(matches) => {
+    if (matches) {
+      return <MainMenu />
+    } else {
+      return <MainMenuMobile/>
+
+    }
+  }}
+</MediaQuery>
+
     <div id="main-contents" >
     {/* <ReactPageScroller ref={c => this._pageScroller = c} pageOnChange={this.pageOnChange}> */}
     <Scroller>
